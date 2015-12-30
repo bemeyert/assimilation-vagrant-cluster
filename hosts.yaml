@@ -1,0 +1,28 @@
+domain: local
+boxes:
+    - name: &name1 cma
+      box: centos-7.1-x86_64 
+#      box_url: http://adminftp/files/centos-7.1-x86_64.box
+      hostname: *name1 
+      provision:
+          - name: 'provision/multicast.sh'
+            run: 'always'
+          - name: 'provision/update_c7.sh'
+          - name: 'provision/cma.sh'
+      triggers:
+          - "systemctl start neo4j.service ; sleep 10"
+          - "systemctl start assimilation-cma.service ; sleep 10"
+          - "systemctl start assimilation-nanoprobe.service"
+    - name: &name2 box1
+      box: centos-7.1-x86_64 
+#      box_url: http://adminftp/files/centos-7.1-x86_64.box
+      hostname: *name2 
+      provision:
+          - name: 'provision/multicast.sh'
+            run: 'always'
+          - name: 'provision/update_c7.sh'
+          - name: 'provision/nano.sh'
+      triggers:
+          - "systemctl start assimilation-nanoprobe.service"
+
+
