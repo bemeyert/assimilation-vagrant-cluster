@@ -1,9 +1,12 @@
 # assimilation-vagrant-cluster
 
-Control Vagrant with a YAML file. Start as many boxes as you like. They all run
-in the same private network (using DHCP, name resolution included).
+Runs [Assimilation](http://linux-ha.org/source-doc/assimilation/html/index.html)
+in a cluster. Control Vagrant with a YAML file. Start as many boxes as you
+like. They all run in the same private network (using DHCP, name resolution
+included).
 
 **Caveat no. 1**: Works only with the Virtualbox provider.
+
 **Caveat no.2**: Only used and tested with CentOS 7.
 
 ## Usage
