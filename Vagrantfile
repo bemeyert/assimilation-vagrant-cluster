@@ -10,6 +10,14 @@ unless Vagrant.has_plugin?('vagrant-hostmanager')
     EOF
     raise Vagrant::Errors::VagrantError.new, error_str
 end
+unless Vagrant.has_plugin?('vagrant-triggers')
+    error_str = <<-EOF
+    Vagrant Plugin vagrant-triggers missing!
+    Install the plugin with:
+    $ vagrant plugin install vagrant-triggers
+    EOF
+    raise Vagrant::Errors::VagrantError.new, error_str
+end
 
 require 'yaml'
 
