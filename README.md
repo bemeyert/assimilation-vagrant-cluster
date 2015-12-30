@@ -9,11 +9,11 @@ included).
 
 **Caveat no.2**: Only used and tested with CentOS 7.
 
-## Usage
+### Usage
 
-Edit `hosts.yaml` according to your neeeds and run `vagrant up`.
+Edit `hosts.yaml` according to your needs and run `vagrant up`.
 
-## Format of `hosts.yaml`
+### Format of `hosts.yaml`
 
 ```yaml
 domain: local
@@ -51,16 +51,12 @@ boxes:
   script will always run as described in the
   [Vagrant documentation](https://docs.vagrantup.com/v2/provisioning/basic_usage.html)
 
-## Requirements
+### Requirements
 
 You must install the Vagrant plugins `vagrant-hostmanager` and
 `vagrant-triggers`. It is recommended to install `vagrant-cachier`.
 
-## Accessing the neo4j webconsole
-
-
-
-### Get the neo4j web interface
+### Accessing the neo4j webconsole
 
 `ssh root@172.28.128.3 -L 7474:127.0.0.1:7474 -N`
 
